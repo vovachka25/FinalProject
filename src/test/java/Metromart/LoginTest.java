@@ -6,13 +6,14 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 
+
 public class LoginTest extends ChromeRunner {
     @Test
     public void Login(){
         ChromeRunner.Auth();
 
         $("#headerProfileContent").shouldBe(Condition.visible);
-        $("#headerProfileContent a").click();
+        $("#headerProfileContent").click();
 
         $(".customer-heading").shouldHave(Condition.text("Testuser , გამარჯობა!"));
     }

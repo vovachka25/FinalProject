@@ -3,9 +3,6 @@ package Metromart;
 import Runner.ChromeRunner;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.Selectors;
-import com.codeborne.selenide.Selenide;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -17,7 +14,8 @@ public class AccountTest extends ChromeRunner {
     @BeforeTest
     public static void Authenticate() {
         ChromeRunner.Auth();
-        $("#headerProfileContent a").click();
+        $("#headerProfileContent").shouldBe(Condition.visible);
+        $("#headerProfileContent").click();
     }
 
     @Test
