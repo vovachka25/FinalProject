@@ -6,4 +6,9 @@
             <class name="Metromart.LoginTest" />
         </classes>
     </test>
+    <test name="TestSuit2" parallel="tests">
+        <classes>
+            <class name="Metromart.AccountTest" />
+        </classes>
+    </test>
 </suite>
