@@ -1,11 +1,13 @@
 package Runner;
 
+import StepObject.LoginSteps;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.github.javafaker.Faker;
 import org.testng.annotations.BeforeTest;
 
-import static com.codeborne.selenide.Selenide.$;
+import static DataObject.Credentials.Email;
+import static DataObject.Credentials.Password;
 
 public class ChromeRunner {
     public Faker faker;
@@ -22,10 +24,11 @@ public class ChromeRunner {
     }
 
     public static void Auth(){
-        $("#headerProfileContent").click();
-
-        $("#login-email").setValue("jesitydu@ema-sofia.eu");
-        $("#login-password").setValue("testpassword123");
-        $("#loginButtonStep2").click();
+        LoginSteps loginSteps = new LoginSteps();
+        loginSteps
+            .OpenLoginDialog()
+            .FillEmail(Email)
+            .FillPassword(Password)
+            .ClickLogin();
     }
 }

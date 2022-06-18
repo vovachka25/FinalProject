@@ -11,4 +11,9 @@
             <class name="Metromart.AccountTest" />
         </classes>
     </test>
+    <test name="TestSuite" parallel="tests">
+        <classes>
+            <class name="Metromart.CartTest" />
+        </classes>
+    </test>
 </suite>
